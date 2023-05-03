@@ -42,6 +42,11 @@ public class EmployeeController {
         log.info("员工登录：{}", employeeLoginDTO);
 
         Employee employee = employeeService.login(employeeLoginDTO);
+        /*
+        string salt = employee.getsalt();
+        String concat = password.concat(salt);
+        String hex= Digestutils.md5Hex(concat);
+        */
 
         //登录成功后，生成jwt令牌
         Map<String, Object> claims = new HashMap<>();
